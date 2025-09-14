@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janindu Distributors - Premium Distribution Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'gradient': 'gradient 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1.2s ease-out',
+                        'scale-in': 'scaleIn 0.8s ease-out',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '400% 400%',
+                                'background-position': '0% 50%'
+                            },
+                            '50%': {
+                                'background-size': '400% 400%',
+                                'background-position': '100% 50%'
+                            }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '33%': { transform: 'translateY(-10px) rotate(1deg)' },
+                            '66%': { transform: 'translateY(-5px) rotate(-1deg)' }
+                        },
+                        glow: {
+                            '0%': { 'box-shadow': '0 0 20px rgba(139, 69, 19, 0.5)' },
+                            '100%': { 'box-shadow': '0 0 40px rgba(139, 69, 19, 0.8), 0 0 60px rgba(139, 69, 19, 0.4)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(60px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        }
+                    },
+                    colors: {
+                        'brand': {
+                            50: '#fdf8f3',
+                            100: '#f9ede1',
+                            200: '#f2d6c2',
+                            300: '#e8b896',
+                            400: '#db9168',
+                            500: '#d17244',
+                            600: '#c35a39',
+                            700: '#a34832',
+                            800: '#843c30',
+                            900: '#6b3329',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth;
+        }
+        
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 25%, #CD853F 50%, #DEB887 75%, #F4A460 100%);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            position: relative;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .intersection-observer {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .intersection-observer.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .product-card:hover {
+            background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            top: 70%;
+            left: 80%;
+            animation-delay: -2s;
+        }
+        
+        .shape:nth-child(3) {
+            top: 40%;
+            left: 70%;
+            animation-delay: -4s;
+        }
+        
+        .parallax {
+            transform: translateZ(0);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce-slow 2s infinite;
+        }
+        
+        .logo-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s;
+        }
+        
+        .logo-container:hover::after {
+            left: 100%;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8B4513, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 overflow-x-hidden">
+
+
+
+    <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Navbar Test</title>
+
+  <!-- Tailwind CDN (only for quick testing) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* simple slide/fade for mobile nav */
+    .mobile-nav {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 300ms ease, opacity 200ms ease;
+    }
+    .mobile-nav[aria-hidden="false"] {
+      max-height: 600px; /* big enough to fit menu */
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+
+
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <div class="w-14 h-14 rounded-xl overflow-hidden shadow-lg">
+          <img src="{{ url_for('static', filename='images/Screenshot.png') }}" 
+               alt="Janindu Distributors" 
+               class="w-full h-full object-cover">
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-gray-800">Janindu Distributor</h1>
+          <p class="text-xs text-gray-600">Official Distributor</p>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex space-x-8">
+        <a href="#about" class="text-gray-700 hover:text-brand-600">About</a>
+        <a href="#products" class="text-gray-700 hover:text-brand-600">Products</a>
+        <a href="#order" class="text-gray-700 hover:text-brand-600">Order</a>
+        <a href="#contact" class="text-gray-700 hover:text-brand-600">Contact</a>
+      </div>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:block">
+        <a href="#order" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition">
+          Order Now
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileToggle"
+              class="lg:hidden p-2 rounded-md bg-white shadow-md text-gray-700 z-50 relative flex items-center justify-center">
+        <!-- Hamburger SVG -->
+        <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Close SVG -->
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+
+
+
+
+
+
+    
+
+
+
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobileNav" class="hidden lg:hidden bg-white border-t border-gray-200">
+    <div class="px-6 py-6 space-y-6">
+      <a href="#about" class="mobile-link block text-gray-700 hover:text-brand-600 font-medium text-lg">About</a>
+      <a href="#products" class="mobile-link block text-gray-700 hover:text-brand-600 font-medium text-lg">Products</a>
+      <a href="#order" class="mobile-link block text-gray-700 hover:text-brand-600 font-medium text-lg">Order</a>
+      <a href="#contact" class="mobile-link block text-gray-700 hover:text-brand-600 font-medium text-lg">Contact</a>
+      <a href="#order" class="mobile-link block btn-primary text-white px-6 py-3 rounded-full font-semibold text-center">
+        Order Now
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mobileNav = document.getElementById("mobileNav");
+    const iconOpen = document.getElementById("iconOpen");
+    const iconClose = document.getElementById("iconClose");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+    // Open mobile menu
+    function openMenu() {
+      mobileNav.classList.remove("hidden");
+      iconOpen.classList.add("hidden");
+      iconClose.classList.remove("hidden");
+    }
+
+    // Close mobile menu
+    function closeMenu() {
+      mobileNav.classList.add("hidden");
+      iconOpen.classList.remove("hidden");
+      iconClose.classList.add("hidden");
+    }
+
+    // Toggle menu on hamburger click
+    mobileToggle.addEventListener("click", () => {
+      if (mobileNav.classList.contains("hidden")) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    });
+
+    // Close menu when a mobile link is clicked
+    mobileLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+  });
+</script>
+
+
+
+
+    
+   
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="floating-shapes">
+            <div class="shape w-20 h-20 bg-white rounded-full"></div>
+            <div class="shape w-32 h-32 bg-white rounded-full"></div>
+            <div class="shape w-16 h-16 bg-white rounded-full"></div>
+        </div>
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
+            <div class="animate-slide-up">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-poppins text-white mb-6 leading-tight">
+                    Premium Distribution
+                    <span class="block bg-gradient-to-r from-yellow-300 via-orange-300 to-yellow-400 bg-clip-text text-transparent">
+                        Excellence
+                    </span>
+                </h1>
+            </div>
+            
+            <div class="animate-fade-in" style="animation-delay: 0.3s;">
+                <p class="text-lg sm:text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
+                    Your trusted partner delivering premium Maliban Biscuits, Silver Mills products & Zellers Chocolate to retail stores, supermarkets, wholesalers and hotels across the Southern Province of Sri Lanka
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style="animation-delay: 0.6s;">
+                <a href="#products" class="px-8 py-4 glass rounded-full text-white font-semibold hover:bg-white/30 transition-all duration-300 hover:scale-105 group">
+                    <i class="fas fa-eye mr-2 group-hover:animate-pulse"></i>
+                    Explore Products
+                </a>
+                <a href="#order" class="px-8 py-4 btn-primary text-white font-semibold rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-glow">
+                    <i class="fas fa-shopping-cart mr-2"></i>
+                    Place Order Now
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-50 to-white"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20 intersection-observer">
+                <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gradient mb-6">About Janindu Distributor</h2>
+                <div class="section-divider max-w-xs mx-auto"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-6">
+                    Building trust through reliable distribution excellence
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="intersection-observer" style="animation-delay: 0.2s;">
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold font-poppins text-gray-800 mb-8">
+                            Your Reliable Distribution Partner
+                        </h3>
+                        
+                        <div class="prose prose-lg text-gray-600 space-y-4">
+                            <p class="leading-relaxed">
+                                We are a trusted distributor specializing in delivering premium quality Maliban Biscuits, Silver Mills products and Zellers Chocolate to retail stores throughout the Southern Province of Sri Lanka. Our commitment to reliability, excellence, and exceptional service sets us apart in the industry.
+                            </p>
+                            
+                            <p class="leading-relaxed">
+                                With years of experience and deep industry knowledge, we ensure your shelves are consistently stocked with the finest biscuits and confectionery products that your customers love and trust. Our dedicated team works around the clock to maintain the highest standards of service quality.
+                            </p>
+                            
+                            <p class="leading-relaxed">
+                                We believe in building lasting partnerships with our retail clients, providing personalized service tailored to meet your unique business requirements and helping you grow your business successfully.
+                            </p>
+                        </div>
+                        
+                        <!-- Brand Partners -->
+                        <div class="mt-12">
+                            <h4 class="font-semibold text-gray-800 mb-6 text-lg">Our Brand Partners</h4>
+                            <div class="flex flex-wrap gap-6">
+                                <div class="glass-dark p-6 rounded-2xl card-hover group">
+                                    <div class="w-32 h-16 bg-gradient-to-r from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
+                                        <img src="{{ url_for('static', filename='images/Untitled.png') }}" alt="Janindu Distributors" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                <div class="glass-dark p-6 rounded-2xl card-hover group">
+                                    <div class="w-32 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-lg flex items-center justify-center">
+                                        <img src="{{ url_for('static', filename='images/Rectangle.png') }}" alt="Janindu Distributors" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                <div class="glass-dark p-5 rounded-2xl card-hover group">
+                                    <div class="w-32 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-lg flex items-center justify-center">
+                                        <img src="{{ url_for('static', filename='images/images.jpeg') }}" alt="Janindu Distributors" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="intersection-observer" style="animation-delay: 0.4s;">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-500 to-brand-600 rounded-3xl blur-2xl opacity-20 animate-pulse-slow"></div>
+                        <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+                            <img src="https://www.telegraph.co.uk/content/dam/news/2023/08/12/TELEMMGLPICT000247324436_16918668943660_trans_NvBQzQNjv4BqmNT3sJcuERZpuhXWcGB_NzjNMyPXpDE7wu5kOXHTNbU.jpeg?imwidth=1920" 
+                                 alt="Distribution Center" 
+                                 class="w-full h-80 object-cover">
+                            <div class="p-6 bg-gradient-to-r from-brand-500 to-brand-600">
+                                <h4 class="text-white font-semibold text-lg mb-2">Modern Distribution Facility</h4>
+                                <p class="text-white/90 text-sm">State-of-the-art warehouse and logistics management</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20 intersection-observer">
+            <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gradient mb-6">Our Premium Products</h2>
+            <div class="section-divider max-w-xs mx-auto"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-6">
+                Discover our extensive collection of premium biscuits and confectionery products
+            </p>
+        </div>
+        
+        <!-- Product Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <!-- Product 1 -->
+            <div class="product-card rounded-3xl p-8 shadow-lg card-hover intersection-observer group" style="animation-delay: 0.5s;">
+                <div class="mb-6 overflow-hidden rounded-2xl">
+                <img src="https://www.grocerylanka.com/cdn/shop/products/Maliban-Chocolate-Cream-200g_614x614.jpg?v=1592884983" 
+                         alt="Butter Biscuit" 
+                         class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="text-gradient font-bold text-gradient">Chocolate Cream</div>
+             
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card rounded-3xl p-8 shadow-lg card-hover intersection-observer group" style="animation-delay: 0.6s;">
+                <div class="mb-6 overflow-hidden rounded-2xl">
+                                                            <img src="https://www.silvermillgroup.com/assets/imgs/products/food-ingredients/crunchy-coconut-snaks.jpg" 
+
+                         alt="Chocolate Chip Cookies" 
+                         class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="text-gradient font-bold text-gradient">Coconut Snacks</div>
+                
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card rounded-3xl p-8 shadow-lg card-hover intersection-observer group" style="animation-delay: 0.7s;">
+                <div class="mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://i.ebayimg.com/00/s/MTE3MFgxNjAw/z/lgwAAOSwT9RiD2-m/$_57.PNG?set_id=880000500F" 
+                         alt="Wafer Sticks" 
+                         class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="text-gradient font-bold text-gradient">Gold Marie</div>
+                
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card rounded-3xl p-8 shadow-lg card-hover intersection-observer group" style="animation-delay: 0.8s;">
+                <div class="mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://scontent.fcmb2-2.fna.fbcdn.net/v/t1.6435-9/33777426_184699628900636_7849241840850042880_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Ye9s5e-VNfsQ7kNvwGtNgVt&_nc_oc=AdkMy2T-U0xAKRzdutk0LvdyV_fHtIQ3ZfoeqKpcnotCInPaCqXJsYW2oyffvxVMFns&_nc_zt=23&_nc_ht=scontent.fcmb2-2.fna&_nc_gid=YH8WIaZuWGgabbPaoD3-Og&oh=00_AfalLaqkxkrtAMmgo7VAhzY2ehzSycGByJMcDfH5XuUikg&oe=68ED113A" 
+                         alt="Cream Crackers" 
+                         class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="text-gradient font-bold text-gradient">Coconut Milk</div>
+                
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card rounded-3xl p-8 shadow-lg card-hover intersection-observer group" style="animation-delay: 0.8s;">
+                <div class="mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://www.grocerylanka.com/cdn/shop/products/Maliban-Cream-Cracker_614x614.jpg?v=1527711525" 
+                         alt="Cream Crackers" 
+                         class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="text-gradient font-bold text-gradient">Cream Crackers</div>
+                
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card rounded-3xl p-8 shadow-lg card-hover intersection-observer group" style="animation-delay: 0.8s;">
+                <div class="mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://www.silvermillgroup.com/assets/imgs/products/liquids-beverages/fruit-juices.jpg" 
+                         alt="Cream Crackers" 
+                         class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="text-gradient font-bold text-gradient">Fruit Juices</div>
+                
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card rounded-3xl p-8 shadow-lg card-hover intersection-observer group" style="animation-delay: 0.8s;">
+                <div class="mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://www.ranjanlanka.lk/src/item/10146380110.png?reload=176" 
+                         alt="Cream Crackers" 
+                         class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="text-gradient font-bold text-gradient">Nice</div>
+                
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card rounded-3xl p-8 shadow-lg card-hover intersection-observer group" style="animation-delay: 0.8s;">
+                <div class="mb-6 overflow-hidden rounded-2xl">
+                    <img src="http://www.yamu.lk/wp-content/uploads/2021/05/1657091658674_Yamu-Canva-Template-jpeg.png" 
+                         alt="Cream Crackers" 
+                         class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="text-gradient font-bold text-gradient">King Coconut Water
+                </div>
+                
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card rounded-2xl p-8 shadow-lg card-hover intersection-observer group" style="animation-delay: 0.8s;">
+                <div class="mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://objectstorage.ap-mumbai-1.oraclecloud.com/n/softlogicbicloud/b/cdn/o/products/120776--01--1632156115.webp" 
+                         alt="Cream Crackers" 
+                         class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="text-gradient font-bold text-gradient">Imorre Choco
+                </div>
+                
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card rounded-2xl p-8 shadow-lg card-hover intersection-observer group" style="animation-delay: 0.8s;">
+                <div class="mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://ceylontoday.lk/wp-content/uploads/2024/10/zellers-chocolates.jpeg" 
+                         alt="Cream Crackers" 
+                         class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="text-gradient font-bold text-gradient">Zellers Chocolates
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- View All Products Button -->
+        <div class="text-center mt-12 intersection-observer" style="animation-delay: 0.6s;">
+            <a href="#order" class="inline-flex items-center px-8 py-4 btn-primary text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <i class="fas fa-shopping-cart mr-3"></i>
+                Order All Products
+                <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Order Section -->
+    <section id="order" class="py-20 bg-gradient-to-br from-brand-50 via-white to-brand-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 intersection-observer">
+                <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gradient mb-6">Place Your Order</h2>
+                <div class="section-divider max-w-xs mx-auto"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mt-6">
+                    Quick and seamless ordering process for your convenience
+                </p>
+            </div>
+            
+
+        <div class="glass-effect rounded-3xl p-8 shadow-2xl">
+            <form method="POST" action="/submit" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                        <input type="text" name="name" required placeholder="Enter your full name"
+                               class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition-colors duration-300">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Mobile Number</label>
+                        <input type="tel" name="phone" required placeholder="+94 77 XXX XXXX"
+                               class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition-colors duration-300">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Shop Name</label>
+                    <input type="text" name="shop" required placeholder="Enter your shop name"
+                           class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition-colors duration-300">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Delivery Address</label>
+                    <textarea name="location" required rows="3" placeholder="Enter your location/address"
+                              class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition-colors duration-300"></textarea>
+                </div>
+
+                <div>
+                  
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Products Needed</label>
+                    <textarea name="instructions" rows="3" placeholder="Any special requirements or notes..."
+                              class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition-colors duration-300"></textarea>
+                </div>
+
+                <button type="submit" class=" bg-purple-500 text-white px-8 py-3 rounded-lg text-sm hover:bg-purple-600 transition-colors duration-300">
+                    Submit Order
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 intersection-observer">
+                <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gradient mb-6">Get In Touch</h2>
+                <div class="section-divider max-w-xs mx-auto"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-6">
+                    Ready to partner with us? Contact our distribution team today
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="intersection-observer">
+                    <h3 class="text-3xl font-bold font-poppins text-gray-800 mb-10">Contact Information</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-6 p-8 bg-gradient-to-r from-white to-brand-50 rounded-3xl shadow-lg card-hover border border-brand-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-brand-500 to-brand-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 text-lg">Our Location</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                No 43, Paramulla Cross Road<br>Thotamuna, Matara
+
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-6 p-8 bg-gradient-to-r from-white to-green-50 rounded-3xl shadow-lg card-hover border border-green-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-phone-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 text-lg">Phone Numbers</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Primary: +94 769347047<br>
+                                    <span class="text-green-600 font-semibold">24/7 Support Available</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-6 p-8 bg-gradient-to-r from-white to-purple-50 rounded-3xl shadow-lg card-hover border border-purple-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 text-lg">Email Address</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    grsbandara69@gmail.com<br>
+                                    <span class="text-purple-600 font-semibold">Response within 24 hours</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-6 p-8 bg-gradient-to-r from-white to-orange-50 rounded-3xl shadow-lg card-hover border border-orange-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-clock text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 text-lg">Business Hours</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Monday - Saturday: 8:00 AM - 6:00 PM<br>
+                                    <span class="text-orange-600 font-semibold">Sunday: Closed</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="intersection-observer" style="animation-delay: 0.2s;">
+                    <h3 class="text-3xl font-bold font-poppins text-gray-800 mb-10">Find Us Here</h3>
+                    
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-500 to-brand-600 blur-xl opacity-20"></div>
+<iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.1909938509773!2d80.53714781349372!3d5.9419768085385645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae13f5b53c07a33%3A0x2e14d27e81886324!2sSadil%20Enterprises!5e0!3m2!1sen!2slk!4v1757793357808!5m2!1sen!2slk" 
+  class="relative w-full h-96 rounded-3xl border-4 border-white shadow-inner" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="glass-dark rounded-2xl p-4">
+                                <h4 class="text-white font-bold mb-1">Janindu Distributor</h4>
+                                <p class="text-white/80 text-sm">Premium Distribution Center</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Contact Actions -->
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <a href="tel:+94769347047" 
+                           class="flex items-center justify-center px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>
+                            Call Now
+                        </a>
+                        
+                        <a href="https://wa.me/94769347047" 
+                           target="_blank"
+                           class="flex items-center justify-center px-6 py-4 bg-gradient-to-r from-green-400 to-green-500 text-white font-semibold rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-900/20 to-brand-800/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-2 intersection-observer">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-brand-400 to-brand-600 rounded-2xl flex items-center justify-center shadow-lg animate-float">
+                            <div class="w-14 h-14 rounded-xl overflow-hidden shadow-lg">
+          <img src="{{ url_for('static', filename='images/Screenshot.png') }}" 
+               alt="Janindu Distributors" 
+               class="w-full h-full object-cover">
+        </div>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold font-poppins">Janindu Distributor</h4>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-8 leading-relaxed max-w-md">
+                        Your trusted partner for premium food product distribution across the Southern Province of Sri Lanka. 
+                        Building relationships through reliable service and quality products.
+                    </p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-r from-pink-500 to-red-500 rounded-xl flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/94771234567" class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="intersection-observer" style="animation-delay: 0.1s;">
+                    <h4 class="text-xl font-bold font-poppins mb-8 text-white">Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform text-brand-400"></i> 
+                            About Us
+                        </a></li>
+                        <li><a href="#products" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform text-brand-400"></i> 
+                            Our Products
+                        </a></li>
+                        <li><a href="#order" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform text-brand-400"></i> 
+                            Place Order
+                        </a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-3 group-hover:translate-x-1 transition-transform text-brand-400"></i> 
+                            Contact Us
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div class="intersection-observer" style="animation-delay: 0.2s;">
+                    <h4 class="text-xl font-bold font-poppins mb-8 text-white">Contact Info</h4>
+                    <div class="space-y-4 text-gray-300">
+                        <p class="flex items-start leading-relaxed">
+                            <i class="fas fa-map-marker-alt mr-3 text-brand-400 mt-1 flex-shrink-0"></i> 
+                            No 43, Paramulla Cross Road<br>Thotamuna, Matara
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-green-400"></i> 
+                            +94 769347047
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-purple-400"></i> 
+                            grsbandara69@gmail.com
+                        </p>
+                        <p class="flex items-start">
+                            <i class="fas fa-clock mr-3 text-orange-400 mt-1 flex-shrink-0"></i> 
+                            Mon-Sat: 8AM-6PM
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-16 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-center md:text-left">
+                        &copy; 2025 Janindu Distributors. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" 
+            class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-brand-500 to-brand-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Enhanced navigation with smooth transitions
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const scrolled = window.pageYOffset;
+            
+            if (scrolled > 100) {
+                navbar.classList.add('nav-blur');
+            } else {
+                navbar.classList.remove('nav-blur');
+            }
+        });
+
+        // Mobile menu with smooth animations
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        let mobileMenuOpen = false;
+
+        mobileToggle.addEventListener('click', function() {
+            mobileMenuOpen = !mobileMenuOpen;
+            
+            if (mobileMenuOpen) {
+                mobileNav.classList.remove('-translate-y-full', 'opacity-0');
+                mobileNav.classList.add('translate-y-0', 'opacity-100');
+                mobileToggle.innerHTML = '<i class="fas fa-times text-xl"></i>';
+            } else {
+                mobileNav.classList.remove('translate-y-0', 'opacity-100');
+                mobileNav.classList.add('-translate-y-full', 'opacity-0');
+                mobileToggle.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+            }
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuOpen = false;
+                mobileNav.classList.remove('translate-y-0', 'opacity-100');
+                mobileNav.classList.add('-translate-y-full', 'opacity-0');
+                mobileToggle.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+            });
+        });
+
+        // Enhanced smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Advanced intersection observer for staggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.intersection-observer').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', function() {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('text-brand-600');
+                link.classList.add('text-gray-700');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.remove('text-gray-700');
+                    link.classList.add('text-brand-600');
+                }
+            });
+        });
+
+        // Enhanced form interactions
+        const form = document.getElementById('orderForm');
+        const inputs = form.querySelectorAll('input, textarea');
+        
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('scale-102');
+                this.style.borderColor = '#D2691E';
+                this.style.boxShadow = '0 0 0 3px rgba(210, 105, 30, 0.1)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('scale-102');
+                this.style.borderColor = '';
+                this.style.boxShadow = '';
+            });
+        });
+
+        // Form submission with loading state
+        form.addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>Processing Order...';
+            submitBtn.disabled = true;
+            
+            // Re-enable after 3 seconds (for demo purposes)
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('opacity-100');
+                backToTop.classList.remove('pointer-events-none');
+            } else {
+                backToTop.classList.remove('opacity-100');
+                backToTop.classList.add('pointer-events-none');
+            }
+        });
+        
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Parallax effects for performance
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-bg');
+            
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+            
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+
+        // Product card enhanced hover effects
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.03)';
+                this.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '';
+            });
+        });
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+            
+            // Initialize form validation
+            const requiredFields = form.querySelectorAll('input[required], textarea[required]');
+            requiredFields.forEach(field => {
+                field.addEventListener('invalid', function(e) {
+                    e.preventDefault();
+                    this.style.borderColor = '#ef4444';
+                    this.style.animation = 'shake 0.5s ease-in-out';
+                });
+                
+                field.addEventListener('input', function() {
+                    if (this.validity.valid) {
+                        this.style.borderColor = '#10b981';
+                        this.style.animation = '';
+                    }
+                });
+            });
+        });
+
+        // Add CSS animation for form validation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+            
+            .scale-102 {
+                transform: scale(1.02);
+            }
+            
+            .nav-link {
+                position: relative;
+            }
+            
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+                transition: all 0.3s ease;
+                transform: translateX(-50%);
+            }
+            
+            .nav-link:hover::after {
+                width: 100%;
+            }
+            
+            .form-group {
+                position: relative;
+                transition: all 0.3s ease;
+            }
+            
+            .form-group:focus-within {
+                transform: translateY(-2px);
+            }
+            
+            .loaded .hero-bg h1 {
+                animation: slideUp 1.2s ease-out;
+            }
+            
+            .loaded .hero-bg p {
+                animation: fadeIn 1.5s ease-out 0.3s both;
+            }
+            
+            .loaded .hero-bg .flex {
+                animation: fadeIn 1.8s ease-out 0.6s both;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Enhanced typing effect for hero
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Initialize typing effect after page load
+        setTimeout(() => {
+            const heroTitle = document.querySelector('.hero-bg h1 span');
+            if (heroTitle) {
+                const originalText = heroTitle.textContent;
+                typeWriter(heroTitle, originalText, 150);
+            }
+        }, 2000);
+
+        // Add scroll progress indicator
+        const progressBar = document.createElement('div');
+        progressBar.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            z-index: 9999;
+            transition: width 0.3s ease;
+        `;
+        document.body.appendChild(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+        });
+
+        // Add floating contact button
+        const floatingContact = document.createElement('div');
+        floatingContact.innerHTML = `
+            <a href="https://wa.me/94771234567" 
+               class="fixed bottom-24 right-8 w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-40 flex items-center justify-center animate-pulse">
+                <i class="fab fa-whatsapp text-xl"></i>
+            </a>
+        `;
+        document.body.appendChild(floatingContact);
+
+        // Smooth reveal animations for sections
+        const revealElements = document.querySelectorAll('.intersection-observer');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Add loading screen
+        const loadingScreen = document.createElement('div');
+        loadingScreen.innerHTML = `
+            <div style="
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                transition: opacity 0.5s ease;
+            ">
+                <div style="text-align: center; color: white;">
+                    <div style="width: 60px; height: 60px; margin: 0 auto 20px; border: 4px solid rgba(255,255,255,0.3); border-top: 4px solid white; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    <h2 style="font-family: 'Poppins', sans-serif; font-size: 24px; margin: 0; font-weight: 600;">Janindu Distributors</h2>
+                    <p style="font-size: 14px; margin: 10px 0 0 0; opacity: 0.9;">Loading Premium Distribution Solutions</p>
+                </div>
+            </div>
+        `;
+        
+        const spinStyle = document.createElement('style');
+        spinStyle.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(spinStyle);
+        document.body.appendChild(loadingScreen);
+
+        // Remove loading screen after page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }, 1500);
+        });
+
+        // Add custom cursor effect (optional)
+        const cursor = document.createElement('div');
+        cursor.style.cssText = `
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(139,69,19,0.8) 0%, rgba(139,69,19,0.2) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            display: none;
+        `;
+        
+        // Only show custom cursor on desktop
+        if (window.innerWidth > 1024) {
+            document.body.appendChild(cursor);
+            cursor.style.display = 'block';
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX - 10 + 'px';
+                cursor.style.top = e.clientY - 10 + 'px';
+            });
+
+            document.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.style.transform = 'scale(2)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.style.transform = 'scale(1)';
+                });
+            });
+        }
+
+        // Performance optimization: Lazy load images
+        const images = document.querySelectorAll('img[src*="unsplash"]');
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.5s ease';
+                    
+                    img.addEventListener('load', () => {
+                        img.style.opacity = '1';
+                    });
+                    
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+
+        // Add notification system for form submission
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 16px 24px;
+                background: ${type === 'success' ? 'linear-gradient(135deg, #10b981, #059669)' : 'linear-gradient(135deg, #ef4444, #dc2626)'};
+                color: white;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                z-index: 10000;
+                font-weight: 500;
+                transform: translateX(400px);
+                transition: transform 0.3s ease;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => notification.remove(), 300);
+            }, 4000);
+        }
+
+        // Update form submission handler
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent actual form submission for demo
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>Processing Order...';
+            submitBtn.disabled = true;
+            
+            // Simulate processing time
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check mr-3"></i>Order Submitted!';
+                showNotification('Order submitted successfully! We will contact you within 24 hours.', 'success');
+                
+                // Reset form and button after delay
+                setTimeout(() => {
+                    this.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            }, 2000);
+        });
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
